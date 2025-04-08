@@ -97,12 +97,6 @@ export const deleteProduct = async (req, res) => {
       return res.status(404).json({ message: "Producto no encontrado" });
     }
 
-    if (product.stock > 0) {
-      return res
-        .status(400)
-        .json({ message: "No se puede eliminar un producto con stock" });
-    }
-
     if (!product.status) {
       return res.status(400).json({ message: "El producto ya está eliminado" });
     }
