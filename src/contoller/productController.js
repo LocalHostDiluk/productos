@@ -46,10 +46,6 @@ export const createProduct = async (req, res) => {
   }
 
   try {
-    const categoriaExists = await Categoria.findByPk(categoria_id);
-    if (!categoriaExists) {
-      return res.status(400).json({ message: "La categoría especificada no existe" });
-    }
     const newProduct = await Product.create({
       nombre,
       precio,
