@@ -61,5 +61,5 @@ export const Product = sequelize.define("Producto",{
 });
 
 // Define la asociación con la tabla de categorías
-Product.belongsTo(Categoria, { foreignKey: 'categoriaId', as: 'categoria' });
-Categoria.hasMany(Product, { foreignKey: 'categoriaId', as: 'productos' });
+Product.belongsTo(Categoria, { foreignKey: 'categoria_id', as: 'categoria' });
+Categoria.hasMany(Product, { foreignKey: 'categoria_id', as: 'productos' });
