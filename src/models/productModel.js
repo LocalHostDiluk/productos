@@ -31,11 +31,6 @@ export const Product = sequelize.define("Producto",{
     type: DataTypes.STRING(255), // Ajustado al VARCHAR(255) de la BD
     allowNull: true,
   },
-  // Eliminamos la columna 'categoria' de tipo STRING
-  // categoria: {
-  //   type: DataTypes.STRING,
-  //   allowNull: false,
-  // },
   categoriaId: { // Nueva columna para la clave foránea
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -48,12 +43,12 @@ export const Product = sequelize.define("Producto",{
   },
   fechaCreacion: {
     type: DataTypes.DATE,
-    defaultValue: DataTypes.literal('CURRENT_TIMESTAMP'), // Ajustado al DEFAULT CURRENT_TIMESTAMP de la BD
+    defaultValue: sequelize.literal('CURRENT_TIMESTAMP'), // Usando sequelize.literal
   },
   fechaActualizacion: {
     type: DataTypes.DATE,
-    defaultValue: DataTypes.literal('CURRENT_TIMESTAMP'), // Ajustado al DEFAULT CURRENT_TIMESTAMP de la BD
-    onUpdate: DataTypes.literal('CURRENT_TIMESTAMP'), // Se actualiza al actualizar el registro
+    defaultValue: sequelize.literal('CURRENT_TIMESTAMP'), // Usando sequelize.literal
+    onUpdate: sequelize.literal('CURRENT_TIMESTAMP'), // Se actualiza al actualizar el registro
   },
   status: {
     type: DataTypes.TINYINT(1), // Ajustado al TINYINT(1) de la BD
