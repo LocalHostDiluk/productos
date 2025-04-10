@@ -29,9 +29,9 @@ export const getProductById = async (req, res) => {
 
 
 export const createProduct = async (req, res) => {
-  const { nombre, precio, stock, descripcion, imagen, categoria } = req.body;
+  const { nombre, precio, stock, descripcion, imagen, categoria_id } = req.body;
 
-  if (!nombre || !precio || !stock || !categoria || !descripcion) {
+  if (!nombre || !precio || !stock || !categoria_id || !descripcion) {
     return res
       .status(400)
       .json({ message: "Todos los campos son obligatorios" });
@@ -52,7 +52,7 @@ export const createProduct = async (req, res) => {
       stock,
       descripcion,
       imagen,
-      categoria,
+      categoria_id,
     });
 
     console.log("Producto creado:", newProduct);
@@ -66,7 +66,7 @@ export const createProduct = async (req, res) => {
 
 export const updateProduct = async (req, res) => {
   const { id } = req.params;
-  const { nombre, precio, stock, descripcion, imagen, categoria } = req.body;
+  const { nombre, precio, stock, descripcion, imagen, categoria_id } = req.body;
 
   try {
     const product = await Product.findByPk(id);
@@ -92,7 +92,7 @@ export const updateProduct = async (req, res) => {
       stock: stock || product.stock,
       descripcion: descripcion || product.descripcion,
       imagen: imagen || product.imagen,
-      categoria: categoria || product.categoria,
+      categoria_id: categoria_id || product.categoria_id,
     });
 
     return res
