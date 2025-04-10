@@ -13,6 +13,6 @@ router.get("/all", getProducts);
 router.post("/create", createProduct);
 router.patch("/update/:id", updateProduct);
 router.delete("/delete/:id", deleteProduct);
-router.post("/producto/:id",getProductById);
+router.get("/producto/:id",getProductById);
 
 export default router; // Exportamos el router para usarlo en app.js
