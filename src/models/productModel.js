@@ -31,7 +31,7 @@ export const Product = sequelize.define("Producto",{
     type: DataTypes.STRING(255), // Ajustado al VARCHAR(255) de la BD
     allowNull: true,
   },
-  categoriaId: { // Nueva columna para la clave foránea
+  categoria_id: { // Nueva columna para la clave foránea
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
