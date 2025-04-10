@@ -18,5 +18,5 @@ export const Categoria = sequelize.define("Categoria", {
   },
 }, {
   timestamps: false, // Desactiva createdAt y updatedAt
-  tableName: "categorias", // Debe coincidir con el nombre de la tabla
+  tableName: "categories", // Debe coincidir con el nombre de la tabla
 });
